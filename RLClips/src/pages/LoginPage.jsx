@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -29,6 +30,8 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function LoginPage() {
+  let navigate = useNavigate()
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -37,6 +40,11 @@ export default function LoginPage() {
       password: data.get('password'),
     });
   };
+
+  const routeChange = () => {
+    let path = '/home';
+    navigate(path)
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -56,7 +64,7 @@ export default function LoginPage() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={routeChange} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
