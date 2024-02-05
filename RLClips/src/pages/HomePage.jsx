@@ -15,10 +15,15 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CardHeader } from '@mui/material';
+import CardFiller from '../assets/CardFiller.png'
+import ResponsiveAppBar from '../components/AppBar';
+import { grey } from '@mui/material/colors';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
+    <Typography variant="body2" color="text.secondary" align="center" style={{ color: '#ffffff'}}>
       {'Copyright © '}
       <Link color="inherit" href="#">
         RL Clips
@@ -29,23 +34,22 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
+const theme = createTheme({
+  palette: {
+    background: {
+      paper: grey[850],
+      default: grey[850]
+    },
+  },
+});
 
 export default function HomePage() {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <ResponsiveAppBar />
       <main>
         {/* Hero unit */}
         <Box
@@ -55,20 +59,19 @@ export default function HomePage() {
             pb: 6,
           }}
         >
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" >
             <Typography
               component="h1"
               variant="h2"
               align="center"
               color="text.primary"
               gutterBottom
+              style={{ color: '#ffffff'}}
             >
-              Album layout
+              Feed
             </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Something short and leading about the collection below—its contents,
-              the creator, etc. Make it short and sweet, but not too short so folks
-              don&apos;t simply skip over it entirely.
+            <Typography variant="h5" align="center" color="text.secondary" paragraph style={{ color: '#ffffff'}}>
+              View some of the top clips hit this week!
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -76,8 +79,8 @@ export default function HomePage() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <Button variant="contained" endIcon={<ArrowDropDownIcon />}>Categories</Button>
+              <Button variant="contained" endIcon={<ArrowDropDownIcon />}>Filters</Button>
             </Stack>
           </Container>
         </Box>
@@ -85,30 +88,32 @@ export default function HomePage() {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card} xs={12} sm={6} md={6}>
                 <Card
+                className='white-border-card'
                   sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
+                  <Typography component="h1">Title</Typography>
                   <CardMedia
                     component="div"
                     sx={{
                       // 16:9
                       pt: '56.25%',
                     }}
-                    image="https://source.unsplash.com/random?wallpapers"
+                    image={CardFiller}
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Player Name
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the
-                      content.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt sit.
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
+                    <Button size="small">Comments</Button>
+                    <Button size="small">Links</Button>
                   </CardActions>
                 </Card>
               </Grid>
@@ -117,7 +122,7 @@ export default function HomePage() {
         </Container>
       </main>
       {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer" style={{ color: '#ffffff'}}>
         <Typography variant="h6" align="center" gutterBottom>
           Footer
         </Typography>
@@ -126,6 +131,7 @@ export default function HomePage() {
           align="center"
           color="text.secondary"
           component="p"
+          style={{ color: '#ffffff'}}
         >
           Something here to give the footer a purpose!
         </Typography>

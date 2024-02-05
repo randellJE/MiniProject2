@@ -13,10 +13,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import { grey } from '@mui/material/colors';
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant="body2" color="text.secondary" align="center" {...props} style={{ color: '#ffffff'}}>
       {'Copyright © '}
       <Link color="inherit" href="#">
         RL Clips
@@ -27,7 +28,14 @@ function Copyright(props) {
   );
 }
 
-const defaultTheme = createTheme();
+const theme = createTheme({
+  palette: {
+    background: {
+      paper: grey[850],
+      default: grey[850]
+    },
+  },
+});
 
 export default function LoginPage() {
   let navigate = useNavigate()
@@ -47,9 +55,9 @@ export default function LoginPage() {
   }
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Container component="main" maxWidth="xs">
-        <CssBaseline />
         <Box
           sx={{
             marginTop: 8,
@@ -66,6 +74,9 @@ export default function LoginPage() {
           </Typography>
           <Box component="form" onSubmit={routeChange} noValidate sx={{ mt: 1 }}>
             <TextField
+              InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
               margin="normal"
               required
               fullWidth
@@ -76,6 +87,9 @@ export default function LoginPage() {
               autoFocus
             />
             <TextField
+              InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
               margin="normal"
               required
               fullWidth
@@ -86,8 +100,9 @@ export default function LoginPage() {
               autoComplete="current-password"
             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+              control={<Checkbox value="remember" color="primary" style={{ color: '#ffffff'}}/>}
               label="Remember me"
+              style={{ color: '#ffffff'}}
             />
             <Button
               type="submit"
@@ -103,7 +118,7 @@ export default function LoginPage() {
                   Forgot password?
                 </Link>
               </Grid>
-              <Grid item>
+              <Grid item style={{ color: '#ffffff'}}>
                 Dont have an account?
                 <Link href="/register" variant="body2">
                     {" Register"}

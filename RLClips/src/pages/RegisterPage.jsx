@@ -12,10 +12,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { grey } from '@mui/material/colors'; 
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant="body2" color="text.secondary" align="center" {...props} style={{ color: '#ffffff'}}>
       {'Copyright © '}
       <Link color="inherit" href="#">
         RL Clips
@@ -26,9 +27,15 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
 
-const defaultTheme = createTheme();
+const theme = createTheme({
+  palette: {
+    background: {
+      paper: grey[850],
+      default: grey[850]
+    },
+  },
+});
 
 export default function RegisterPage() {
   const handleSubmit = (event) => {
@@ -41,7 +48,8 @@ export default function RegisterPage() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -50,6 +58,7 @@ export default function RegisterPage() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            color: '#ffffff'
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -69,6 +78,9 @@ export default function RegisterPage() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -79,6 +91,9 @@ export default function RegisterPage() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -89,6 +104,9 @@ export default function RegisterPage() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -99,6 +117,9 @@ export default function RegisterPage() {
                   label="Username"
                   name="username"
                   autoComplete="username"
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -110,6 +131,9 @@ export default function RegisterPage() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
                 />
               </Grid>
             </Grid>
