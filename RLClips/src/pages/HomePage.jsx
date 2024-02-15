@@ -133,7 +133,7 @@ export default function HomePage() {
           component="p"
           style={{ color: '#ffffff'}}
         >
-          Something here to give the footer a purpose!
+          Some stuff here for stuff
         </Typography>
         <Copyright />
       </Box>
