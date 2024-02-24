@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 // http://localhost:8000/api/users/create Adds a POST route to create a new user
 router.post('/create', (req, res) => {
-    Controllers.userController.createUsers(req.body, res);
+    Controllers.userController.createUsers(req, res);
 })
 
 // http://localhost:8000/api/users/<id> Adds a PUT route to update a user
