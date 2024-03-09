@@ -12,6 +12,11 @@ router.post('/create', (req, res) => {
     Controllers.userController.createUsers(req, res);
 })
 
+// http://localhost:8000/api/users/login Adds a POST route to return a user
+router.post('/login', (req, res) => {
+    Controllers.userController.loginUser(req, res);
+})
+
 // http://localhost:8000/api/users/<id> Adds a PUT route to update a user
 router.put('/:id', (req, res) => {
     Controllers.userController.updateUser(req, res);

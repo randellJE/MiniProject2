@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const userSchema = mongoose.Schema({
+const userSchema = Schema({
     firstName: { type: String, trim: true, required: true},
     lastName: { type: String, trim: true, required: true},
     username: { type: String, trim: true, required: true , maxLength: 15},

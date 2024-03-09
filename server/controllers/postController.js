@@ -5,7 +5,7 @@ const getPosts = (res) => {
     Models.Post.find({})
     .then((data) => res.send({ result: 200, data:data }))
     .catch((err) => {
-        res.status(500).send({ result: 500, error: err.nessage })
+        res.status(500).send({ result: 500, error: err.message })
     })
 }
 
