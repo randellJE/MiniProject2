@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import TemporaryDrawer from './Drawer';
+import { useNavigate } from 'react-router-dom';
 
 const pages = ['Home', 'Forums', 'Maps'];
 const settings = ['Profile', 'Account', 'Logout'];
@@ -20,6 +21,7 @@ const settings = ['Profile', 'Account', 'Logout'];
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -36,10 +38,17 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  const handleCreatePost = () => {
+    navigate("/create")
+  }
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        <Button onClick={handleCreatePost}>
+            Create post
+        </Button>
         <IconButton
             size="large"
             edge="start"
@@ -48,7 +57,7 @@ function ResponsiveAppBar() {
             sx={{ mr: 1 }}
           >
             
-            <TemporaryDrawer />
+            {/* <TemporaryDrawer /> */}
           </IconButton>
           <Typography
             variant="h6"
