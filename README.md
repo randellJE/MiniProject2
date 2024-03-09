@@ -11,7 +11,7 @@ Rl Clips is a application aimed to make uploading and viewing clips easier for t
 </ul>
 -
 
-### Planned Updates
+## Planned Updates
 - A reworked UI aimed for use on desktop
 -
 -
