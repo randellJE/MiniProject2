@@ -31,7 +31,7 @@ Rl Clips is a application aimed to make uploading and viewing clips easier for t
 
 ## Upcoming features
 - Profile page for updating/adding important information 
-<ul> Bookmark Feature
+### <ul> Bookmark Feature
  <li> Favorite clips you want to save for later </li>
  <li> Share your bookmarks so others can see what you find interisting </li>
 </ul>
