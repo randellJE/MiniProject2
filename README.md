@@ -20,14 +20,11 @@ Rl Clips is a application aimed to make uploading and viewing clips easier for t
 
 5. As a user I want to filter posts (Views, Date, Trending, Likes)
 
-
-<h2>Installation</h2>
-`npm i `
-
 ## Planned Updates
 - A reworked UI aimed for use on desktop
--
--
+- Profile page
+- Pages for player settings
+- Pages for Workshop maps and training packs
 
 ## Upcoming features
 - Profile page for updating/adding important information 
