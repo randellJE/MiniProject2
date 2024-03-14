@@ -3,26 +3,10 @@
 
 Rl Clips is a application aimed to make uploading and viewing clips easier for the Rocket League community.
 
-## Upcoming features
-- Profile page for updating/adding important information 
-<ul> Bookmark Feature
- <li> Favorite clips you want to save for later </li>
- <li> Share your bookmarks so others can see what you find interisting </li>
-</ul>
--
-
-### Planned Updates
-- A reworked UI aimed for use on desktop
--
--
-#### Install
-`npm i `
-
 ## Tech Stack
 - Frontend: React JS, Node js, 
 - Backend: ExpressJS
 - Database: MongoDB
-
 
 <h2>User map</h2>
 
@@ -36,11 +20,15 @@ Rl Clips is a application aimed to make uploading and viewing clips easier for t
 
 5. As a user I want to filter posts (Views, Date, Trending, Likes)
 
+## Planned Updates
+- A reworked UI aimed for use on desktop
+- Profile page
+- Pages for player settings
+- Pages for Workshop maps and training packs
 
-<h2>Installation</h2>
-
-
-
-Usage
-
-
+## Upcoming features
+- Profile page for updating/adding important information 
+### <ul> Bookmark Feature
+ <li> Favorite clips you want to save for later </li>
+ <li> Share your bookmarks so others can see what you find interisting </li>
+</ul>
