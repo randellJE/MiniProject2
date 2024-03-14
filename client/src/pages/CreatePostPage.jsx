@@ -100,7 +100,7 @@ export default function CreatePostPage() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Create Post
           </Typography>
           <Box
             component="form"
@@ -119,7 +119,10 @@ export default function CreatePostPage() {
                   label="Title"
                   autoFocus
                   InputLabelProps={{
-                    style: { color: "white" },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>
@@ -132,7 +135,10 @@ export default function CreatePostPage() {
                   name="username"
                   autoComplete="username"
                   InputLabelProps={{
-                    style: { color: "white" },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>
@@ -144,7 +150,10 @@ export default function CreatePostPage() {
                   label="Image"
                   name="imageURL"
                   InputLabelProps={{
-                    style: { color: "white" },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>
@@ -156,7 +165,10 @@ export default function CreatePostPage() {
                   label="Description"
                   name="description"
                   InputLabelProps={{
-                    style: { color: "white" },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>

@@ -65,7 +65,7 @@ export default function RegisterPage() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Register
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
@@ -79,7 +79,10 @@ export default function RegisterPage() {
                   label="First Name"
                   autoFocus
                   InputLabelProps={{
-                    style: { color: 'white' },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>
@@ -92,7 +95,10 @@ export default function RegisterPage() {
                   name="lastName"
                   autoComplete="family-name"
                   InputLabelProps={{
-                    style: { color: 'white' },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>
@@ -105,7 +111,10 @@ export default function RegisterPage() {
                   name="email"
                   autoComplete="email"
                   InputLabelProps={{
-                    style: { color: 'white' },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>
@@ -118,7 +127,10 @@ export default function RegisterPage() {
                   name="username"
                   autoComplete="username"
                   InputLabelProps={{
-                    style: { color: 'white' },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>
@@ -132,7 +144,10 @@ export default function RegisterPage() {
                   id="password"
                   autoComplete="new-password"
                   InputLabelProps={{
-                    style: { color: 'white' },
+                    style: { color: "#ffffff" }, // <-- Set label color
+                  }}
+                  InputProps={{
+                    style: { color: "#ffffff" }, // <-- Set input text color
                   }}
                 />
               </Grid>

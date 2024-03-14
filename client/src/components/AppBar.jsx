@@ -14,9 +14,11 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import TemporaryDrawer from './Drawer';
 import { useNavigate } from 'react-router-dom';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Link from "@mui/material/Link";
 
-const pages = ['Home', 'Forums', 'Maps'];
-const settings = ['Profile', 'Account', 'Logout'];
+const pages = [<Link href="/home" variant="body2" sx={{ color: 'white'}}>Home</Link>];
+const settings = ['Profile', 'Account', <Link href="/" variant="body2" sx={{ color: 'white'}}>Logout</Link>];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -44,12 +46,12 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container  maxWidth="xl">
         <Toolbar disableGutters>
         <Button onClick={handleCreatePost}>
-            Create post
+          <AddCircleIcon  sx={{ color: "white" }}/>
         </Button>
-        <IconButton
+        {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -57,8 +59,8 @@ function ResponsiveAppBar() {
             sx={{ mr: 1 }}
           >
             
-            {/* <TemporaryDrawer /> */}
-          </IconButton>
+            <TemporaryDrawer />
+          </IconButton> */}
           <Typography
             variant="h6"
             noWrap

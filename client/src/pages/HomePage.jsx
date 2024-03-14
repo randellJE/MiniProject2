@@ -23,6 +23,8 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CustomCard from "../components/CustomCard";
+import PermanentDrawerLeft from "../components/Drawer2";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function Copyright() {
   return (
@@ -76,11 +78,21 @@ export default function HomePage() {
 
     fetchPosts();
   }, []);
+  // Function to handle deleting a post
+  const handleDelete = async (postId) => {
+    const response = await fetch(`http://localhost:8000/api/posts/${postId}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      setPosts(posts.filter((post) => post._id !== postId));
+    }
+  };
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <ResponsiveAppBar />
+      <PermanentDrawerLeft />
       <main>
         {/* Hero unit */}
         <Box
@@ -129,12 +141,15 @@ export default function HomePage() {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {posts.map((post) => (
-              <Grid item xs={12} sm={6} md={6} key={post._id}>
+              <Grid item xs={12} sm={6} md={6}>
                 <CustomCard
                   title={post.title}
                   imageURL={post.imageURL}
                   username={post.username}
                   description={post.description}
+                  id={post._id} // is this the correct syntax
+                  key={post._id}
+                  onDelete={handleDelete}
                 />
               </Grid>
             ))}
